@@ -182,7 +182,7 @@ All fixes were verified with [AddressSanitizer](https://github.com/google/saniti
 
 ## Authors
 
-Originally created as a course project. IFD format originally specified by Dr. Ray, extended (v3) for items, enemies, and merchants.
+IFD format originally specified by Dr. Ray, extended (v3) for items, enemies, and merchants.
 
 ## License
 
