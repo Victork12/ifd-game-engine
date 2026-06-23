@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+*.o
+*.exe
+*.out
+
+# Compiled binaries (no extension, common on Linux/Mac builds)
+ifd-game-engine
+game
+
+# Code::Blocks IDE files (local state, not portable)
+*.layout
+*.depend
+
+# Editor backups
+*.save
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

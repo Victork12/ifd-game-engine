@@ -1,0 +1,239 @@
+%Interactive Fiction Document Format v2: by Daniel A. Ray
+
+%this is a comment, any line that begins with % is ignored, comments must be on their own line
+% <areas>...</areas>, is the area definition block
+% <links>...</links>, define which areas (listed in same order) links to which other areas  
+% each room link is listed in room order u,d,l,r
+% <items>...</items>, is the item definition block
+% Additional Notes: the player begins in area #1
+
+
+% IMPORTANT NOTE: Comma Separated Lists are not allowed to contain spaces (x,x,x NOT x, x, x)
+
+
+<game>
+	<ptype>hpsp</ptype>	
+		
+	% Area1
+	<area>
+		<desc>You're lost in the Heart of the Dungeon.  Don't get eaten.</desc>
+		<feats>0,0</feats>
+		<mrc>1</mrc>
+	</area>	
+
+	<merch> 
+		% <desc>Hello young advernturer, You look like you need some goods</desc>
+
+		<item>
+			<attack>
+				<name>Sword</name>
+				<desc>Long sword to attack enemy. Does Heavy Damage</desc>
+				<star>1</star>
+				<actmess>You attacked</actmess>
+				<actar>0</actar>
+				<currency>100</currency>
+			</attack>	
+		</item>
+
+
+		<item>
+			<attack>
+				<name>Dagger</name>
+				<desc>short dagger to attack enemy. Does small amounts of Damage</desc>
+				<star>1</star>
+				<actmess>You attacked</actmess>
+				<actar>0</actar>
+				<currency>50</currency>
+			</attack>
+		</item>
+
+
+
+		
+
+	</merch>
+
+    <item>
+    		<use>
+			<name>Silver Bell</name>
+			<desc>It's a simple silver bell. Could it be a dinner bell?</desc>
+			<star>1</star>
+			%message to user upon use
+			<actmess>You ring the bell.  The four doors in this room click unlocked simultaneously with a deafening clatter.  Super unsettling. </actmess>
+			%the room in which the item is active
+			<actar>1</actar>
+		%each triple (group of 3 lines) represents an effect when this item is used
+			<rule>1,u,2</rule>
+		%thus begins the next use effect triple
+			<rule>1,d,6</rule>
+		%and here are two more effect triples
+			<rule>1,l,3</rule>
+			<rule>1,r,4</rule>
+		</use>
+	</item>
+
+	<item>
+		<basic>
+			<name>Letter</name>
+			<desc>This is a note.  The note reads: "This is an interactive fiction game. Try typing help for a list of commands.  Be cool."</desc>
+			<star>1</star>
+		</basic>
+	</item>
+
+% Area2
+	<area>
+		<acurr>100</acurr>
+		<desc>Castle Tower.  Put some other descriptive text here.
+		<feats>0,0</feats>
+	</area>
+
+
+	<enemy>
+		<name>Goblin</name>
+		<desc>This goblin is about to get your ass</desc>
+		<star>2</star>
+		<actmess>You are attacked</actmess>
+		% <actar>2</actar>
+		<enemyAct>1,10</enemyAct>
+	</enemy>
+
+
+	<item>
+		<consume>
+			<name>Bronze Chalice</name>
+			<desc>This chalice appears to have an elixer in it.</desc>
+			<star>1</star>
+			<actmess>You feel stronger!</actmess>
+			<actar>1</actar>
+			<effect>1,10</effect>
+			<currency>100</currency>
+			</consume>
+	</item>
+	
+	<item>
+		<consume>
+			<name>Fire Extenguisher</name>
+			<desc>It's used to put out fires.</desc>
+			<star>1</star>
+			<actmess>What were you thinking?</actmess>
+			<actar>2</actar>
+			<effect>0,25</effect>
+			<currency>150</currency>
+		</consume>
+	</item>
+
+	<item>
+		<basic>
+			<name>Nest</name>
+			<desc>It's a nest.  It's pretty nasty.</desc>
+			<star>2</star>
+		</basic>
+	</item>
+
+	<item>
+		<basic>
+			<name>Poop</name>
+			<desc>I mean, do Bears poop in the woods? Well... where do you think Dragons poop?</desc>
+			<star>2</star>
+		</basic>
+	</item>
+
+	<item>
+		<consume>
+			<name>Dragon's Breakfast</name>
+			<desc>It's a hot mess.</desc>
+			<star>2</star>
+			<actmess>Eating this was maybe a bad idea.  I don't know if that's going to work out for you.</actmess>
+			<actar>0</actar>
+			<effect>0, 10</effect>	
+		</consume>
+	</item>
+
+%Here's another comment.
+
+% Area3
+	<area>
+	<acurr>100</acurr>
+		<desc>DRAGON!!!  You made a FANTASTIC snack!</desc>
+		<feats>1,0</feats>
+	</area>
+
+% Area4
+	<area>
+		<acurr>100</acurr>
+		<desc>Dragon's Lair: At least there's no dragon here.</desc>
+		<feats>0,0</feats>
+	</area>
+
+
+	<enemy>
+		<name>Small Dragon</name>
+		<desc>Shoots fire balls</desc>
+		<star>4</star>
+		<actmess>You are attacked</actmess>
+		<enemyAct>1,20</enemyAct>
+	</enemy>
+
+	<item>
+		<basic>
+			<name>Golden Key</name>
+			<desc>It is a golden key. Keys have obvious uses, but this one is shaped like a red-herring.</desc>
+			<star>4</star>
+		</basic>
+	</item>
+
+% Area5
+	<area>
+		<acurr>100</acurr>
+		<desc>Dragon's Breath: The air is so noxious here you can barely breath, or even SEE!</desc>
+		<feats>0,0</feats>
+	</area>
+
+	<enemy>
+		<name>Gaint Spider</name>
+		<desc>8 foot Spider</desc>
+		<star>5</star>
+		<actmess>You are attacked</actmess>
+		<enemyAct>1,10</enemyAct>
+	</enemy>
+
+	<item>
+		<use>
+			<name>Trophy</name>
+			<desc>It's a trophy that says, "#1 Boss" on it.</desc>
+			<star>5</star>
+			<actmess>The trophy evaporates into thin air. There was magic in it, it seems.  The door down from this room opens.</actmess>
+			<actar>6</actar>
+			<rule>6,d,7</rule>
+		</use>
+	</item>
+
+% Area 6
+	<area>
+		<acurr>100</acurr>
+		<desc>Just another empty room.</desc>
+		<feats>0,0</feats>
+	</area>
+
+% Area 7
+	<area>
+		<acurr>100</acurr>
+		<desc>Escape!  Fresh air!  You didn't die!  Great.  Good for you.</desc>
+		<feats>0,1</feats>
+	</area>
+
+	<links>
+		<linkset>1,1,1,1</linkset>
+		<linkset>2,1,2,2</linkset>
+		<linkset>3,3,3,3</linkset>
+		<linkset>4,4,1,5</linkset>
+		<linkset>5,5,4,5</linkset>
+		<linkset>1,6,6,6</linkset>
+		<linkset>6,7,7,7</linkset>
+	</links>
+
+</game>
+
+
+
+
